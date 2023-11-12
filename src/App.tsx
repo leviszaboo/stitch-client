@@ -1,17 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
+import { QueryClient, QueryClientProvider } from 'react-query';
 import './globals.css';
-import axios from 'axios';
-import UploadForm from './components/UploadForm';
 import Header from './components/Header';
 
 function App() {
-
+  const queryClient = new QueryClient();
 
   return (
-    <div className="App">
-      <Header />
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <div className="App">
+        <Header />
+      </div>
+    </QueryClientProvider>
   );
 }
 
